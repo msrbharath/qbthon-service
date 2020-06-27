@@ -14,7 +14,7 @@
 	<name>QBThon service</name>
 	<description>QBThon service</description>
 
-	<properties>
+	<properties> 
 		<java.version>1.8</java.version>
 	</properties>
 
