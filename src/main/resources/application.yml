@@ -1,7 +1,7 @@
 amazon:
   aws:
-    accessKey: ${{dynamo.accesskey}}
-    secretKey: ${{dynamo.secretkey}}
+    accessKey: ${AWS_ACCESS_KEY_ID}
+    secretKey: ${AWS_SECRET_ACCESS_KEY}
   dynamodb:
     endpoint: http://localhost:8000/
 server:

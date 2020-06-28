@@ -48,7 +48,7 @@ public class QBThonDynamoDBConfig {
         return AmazonDynamoDBClientBuilder
                 .standard()
                 .withCredentials(amazonAWSCredentialsProvider())
-                .withRegion(Regions.US_EAST_2)
+                .withRegion(Regions.AP_SOUTH_1)
                 .build();
     }
 
