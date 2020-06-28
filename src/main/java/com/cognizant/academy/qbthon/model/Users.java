@@ -16,7 +16,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@DynamoDBTable(tableName = "users")
+@DynamoDBTable(tableName = "inqusers")
 public class Users {
 
 	@DynamoDBHashKey(attributeName = "user_id")
