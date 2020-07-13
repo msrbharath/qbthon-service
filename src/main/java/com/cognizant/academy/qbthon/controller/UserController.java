@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,8 +39,8 @@ public class UserController {
 		ResponseEntity.status(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/delete", produces = {"application/json"}, method = RequestMethod.GET)
-	public void deleteUser(String userId) {
+	@RequestMapping(value = "/delete/{userId}", produces = {"application/json"}, method = RequestMethod.DELETE)
+	public void deleteUser(@PathVariable String userId) {
 		userService.deleteUser(userId);
 		ResponseEntity.status(HttpStatus.OK);
 	}
