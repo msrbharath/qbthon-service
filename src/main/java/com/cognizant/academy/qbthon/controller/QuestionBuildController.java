@@ -42,7 +42,7 @@ public class QuestionBuildController {
 		ResponseEntity.status(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/delete/{questionId}", produces = {"application/json"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/delete/{questionId}", produces = {"application/json"}, method = RequestMethod.DELETE)
 	public void deleteQuestions(@PathVariable String questionId) {
 		questionBuildService.deleteQuestions(questionId);
 		ResponseEntity.status(HttpStatus.OK);
