@@ -2,6 +2,7 @@ package com.cognizant.academy.qbthon.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,22 @@ public class EventsServiceImpl implements EventsService{
 	
 	@Override
 	public List<Events> getEvents() {
-		return (List<Events>) eventRepository.findAll();
+		List<Events> events = (List<Events>)eventRepository.findAll();
+		events.forEach(event -> {
+			String skills = event.getSkills().stream()
+			           .map(a -> String.valueOf(a.getSkillName()))
+			           .collect(Collectors.joining(","));
+			String associates = event.getAssociateDetails().stream()
+			           .map(a -> String.valueOf(a.getAssociateId()))
+			           .collect(Collectors.joining(","));
+			String smes = event.getSmeDetails().stream()
+			           .map(a -> String.valueOf(a.getAssociateId()))
+			           .collect(Collectors.joining(","));
+			event.setSkillsList(skills);
+			event.setAssociateList(associates);
+			event.setSmeList(smes);
+		});
+		return events;
 	}
 
 	@Override
