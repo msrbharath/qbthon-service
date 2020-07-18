@@ -10,6 +10,7 @@ import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.ResourceInUseException;
 import com.cognizant.academy.qbthon.model.Events;
 import com.cognizant.academy.qbthon.model.Questions;
+import com.cognizant.academy.qbthon.model.Skill;
 import com.cognizant.academy.qbthon.model.Users;
 
 @Component
@@ -67,5 +68,23 @@ public class QBThonDaoImpl implements QBThonDao {
 		} catch (ResourceInUseException e) { 
 			// Do nothing, table already created
 		}			
+	}
+
+
+	@Override
+	public void createSkillTable() throws Exception {
+		
+		try {
+			dynamoDBMapper = new DynamoDBMapper(amazonDynamoDB);
+
+			CreateTableRequest tableRequest = dynamoDBMapper.generateCreateTableRequest(Skill.class);
+
+			tableRequest.setProvisionedThroughput(new ProvisionedThroughput(1L, 1L));
+
+			amazonDynamoDB.createTable(tableRequest);
+		} catch (ResourceInUseException e) { 
+			// Do nothing, table already created
+		}
+		
 	}
 }

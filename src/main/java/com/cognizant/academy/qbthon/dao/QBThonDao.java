@@ -7,5 +7,7 @@ public interface QBThonDao {
 	public void createQuestionsTable() throws Exception;
 	
 	public void createUsersTable() throws Exception;
+	
+	public void createSkillTable() throws Exception;
 
 }
