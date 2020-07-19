@@ -40,6 +40,37 @@ public class Question {
 	@DynamoDBAttribute(attributeName="options")
 	private List<Option> options;
 	
+	@DynamoDBAttribute(attributeName="option1")
+	String option1;
+	
+	@DynamoDBAttribute(attributeName="option1Correct")
+	String option1Correct;
+	
+	@DynamoDBAttribute(attributeName="option2")
+	String option2;
+	
+	@DynamoDBAttribute(attributeName="option2Correct")
+	String option2Correct;
+	
+	@DynamoDBAttribute(attributeName="option3")
+	String option3;
+	
+	@DynamoDBAttribute(attributeName="option3Correct")
+	String option3Correct;
+	
+	@DynamoDBAttribute(attributeName="option4")
+	String option4;
+	
+	@DynamoDBAttribute(attributeName="option4Correct")
+	String option4Correct;
+	
+	@DynamoDBAttribute(attributeName="option5")
+	String option5;
+	
+	@DynamoDBAttribute(attributeName="option5Correct")
+	String option5Correct;
+	
+	
 	@DynamoDBAttribute(attributeName="question_source")
 	private String questionSource;
 	
