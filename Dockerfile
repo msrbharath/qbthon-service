@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk-alpine
-ADD target/qbthon-service-0.0.1-SNAPSHOT.jar qbapp.jar
-ENTRYPOINT ["java","-jar","/qbapp.jar"]
+VOLUME /tmp
 EXPOSE 8090
+ADD target/*.jar qbappapi.jar
+ENTRYPOINT [ "sh", "-c", "java -jar /qbappapi.jar" ]
