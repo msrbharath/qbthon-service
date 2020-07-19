@@ -23,7 +23,7 @@ public class EventsController {
 	
 	@RequestMapping(value = "/greeting", produces = {"application/json"}, method = RequestMethod.GET)
 	public String greeting() {
-		return "Hello Bharath Raj R!!!";
+		return "Hello EKS I am ready!!!";
 	}
 	
 	@RequestMapping(value = "/", produces = {"application/json"}, method = RequestMethod.GET)
