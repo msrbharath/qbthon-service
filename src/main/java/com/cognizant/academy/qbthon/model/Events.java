@@ -48,8 +48,14 @@ public class Events {
     @DynamoDBAttribute(attributeName = "associate_details")
     private List<AssociateDetail> associateDetails;
     
+    @DynamoDBAttribute(attributeName = "associate_detail")
+    private String associateDetail;
+    
     @DynamoDBTypeConvertedJson
     @DynamoDBAttribute(attributeName = "sme_details")
     private List<AssociateDetail> smeDetails;
+
+    @DynamoDBAttribute(attributeName = "sme_detail")
+    private String smeDetail;
  
 }

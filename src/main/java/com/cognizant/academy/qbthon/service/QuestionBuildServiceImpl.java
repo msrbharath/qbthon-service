@@ -102,6 +102,7 @@ public class QuestionBuildServiceImpl implements QuestionBuildService{
 	public void uploadTemplate(MultipartFile multipartFile, String eventName) {
 
 		Questions questions = new Questions();
+		eventName = "Event 1";
 		questions.setEventName(eventName);
 		try (Workbook workbook = new XSSFWorkbook(multipartFile.getInputStream())) {
 			
