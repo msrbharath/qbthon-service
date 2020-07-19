@@ -1,3 +1,4 @@
+#Build spect to build the docker image and push to both AWS CSR and docker hub 
 version: 0.2
 
 phases:
@@ -29,6 +30,12 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
+#Push it to docker hub as well
+      - echo Push to hub...
+      - echo "$HUB_SECRET" | docker login --username mageshondocker --password-stdin
+      - docker push mageshondocker/qbthon-api-service
+      - docker logout
+      - echo Docker hub push completed!
 artifacts:
   files:
      - 'target/qbthon-service-0.0.1-SNAPSHOT.jar'
