@@ -32,6 +32,7 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
 #Push it to docker hub as well
       - echo Push to hub...
+      - docker build -t mageshondocker/qbthon-api-service .
       - echo "$HUB_SECRET" | docker login --username mageshondocker --password-stdin
       - docker push mageshondocker/qbthon-api-service
       - docker logout
